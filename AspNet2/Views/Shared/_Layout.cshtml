@@ -1,0 +1,41 @@
+﻿<!doctype html>
+
+<html lang="tr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- placeholder for these css. do NOT remove -->
+    <link id="bootstrap" href="" rel="stylesheet" />
+
+    <title>AspNet2</title>
+
+    <link href="~/css/app.css" rel="stylesheet" />
+    <link href="~/css/loader.css" rel="stylesheet" />
+    @RenderSection(name: "headSection", required: false)
+
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+    <partial-c Condition="User.Identity.IsAuthenticated" name="/ViewPartials/_Header.cshtml" />
+
+    @RenderBody()
+
+    <script src="~/js/jquery-3.5.1.js"></script>
+    <script src="~/js/popper.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/qrcode.js"></script>
+    <script src="~/js/app.js"></script>
+
+    @RenderSection(name: "scriptSection", required: false)
+
+</body>
+
+</html>
